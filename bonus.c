@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 12:09:30 by asolano-          #+#    #+#             */
-/*   Updated: 2022/07/01 13:30:39 by asolano-         ###   ########.fr       */
+/*   Updated: 2022/07/04 11:12:29 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	openfile(char *filename, int mode)
 	}
 	else
 		return (open(filename, O_CREAT | O_WRONLY | O_TRUNC,
-					S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH));
+				S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH));
 }
 
 char	*get_path(char *cmd, char **env)
@@ -58,11 +58,11 @@ char	*get_path(char *cmd, char **env)
 
 void	exec(char *cmd, char **env)
 {
-	char **args;
-	char *path;
+	char	**args;
+	char	*path;
 
 	args = ft_split(cmd, ' ');
-	if (ft_strchr(args[0], '/' > -1))
+	if (ft_strchr(args[0], '/') > -1)
 		path = args[0];
 	else
 		path = get_path(args[0], env);
@@ -76,7 +76,7 @@ void	exec(char *cmd, char **env)
 void	redir(char *cmd, char **env, int fdin)
 {
 	pid_t	pid;
-	int	pipefd[2];
+	int		pipefd[2];
 
 	pipe(pipefd);
 	pid = fork();

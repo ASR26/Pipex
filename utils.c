@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 11:59:39 by asolano-          #+#    #+#             */
-/*   Updated: 2022/07/01 13:13:50 by asolano-         ###   ########.fr       */
+/*   Updated: 2022/07/04 11:13:30 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ char	*path_join(char *path, char *bin)
 	int		i;
 	int		j;
 
-	joined = malloc (sizeof(char) * (ft_strchr(path, 0) + ft_strchr(bin, 0) + 2));
+	joined = malloc (sizeof(char) * (ft_strchr(path, 0)
+				+ ft_strchr(bin, 0) + 2));
 	i = 0;
 	j = 0;
 	while (path[j])
