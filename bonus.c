@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 12:09:30 by asolano-          #+#    #+#             */
-/*   Updated: 2022/07/04 11:12:29 by asolano-         ###   ########.fr       */
+/*   Updated: 2022/07/05 08:15:55 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,13 @@ void	redir(char *cmd, char **env, int fdin)
 			exec(cmd, env);
 	}
 }
+
+/*
+ * En este caso el funcionamiento será similar al normal con la diferencia
+ * de que tras ejecutar el primer comando con redir entraremos en un bucle que
+ * irá llamando a redir con los diferentes comandos introducidos hasta que
+ * lleguemos al último y con el resultado de este haremos el exec
+ */
 
 int	main(int argc, char **argv, char **env)
 {

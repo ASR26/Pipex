@@ -6,11 +6,20 @@
 /*   By: asolano- <asolano-@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 11:59:39 by asolano-          #+#    #+#             */
-/*   Updated: 2022/07/04 11:13:30 by asolano-         ###   ########.fr       */
+/*   Updated: 2022/07/05 08:32:53 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
+
+/*
+ * Esta función se encarga de preparar el path para comprobarlo más adelante.
+ * Hacemos un malloc del tamaño de path más el tamaño de bin más 2.
+ * Mientras que exista el path vamos copiando el path en joined, y al final le
+ * añadimos '/' para que el pathing funcione correctamente.
+ * Mientras que exista bin vamos copiando en joined lo que haya en bin (el
+ * comando que vamos a buscar), le añadimos un '0' al final y lo devolvemos.
+ */
 
 char	*path_join(char *path, char *bin)
 {
@@ -32,6 +41,12 @@ char	*path_join(char *path, char *bin)
 	return (joined);
 }
 
+/*
+ * Esta función compara dos strings hasta cierto número de caracteres, en caso
+ * de que sean diferentes devolverá el valor de diferencia entre los caracteres,
+ * si son iguales devolverá 0
+ */
+
 int	ft_strncmp(char *str1, char *str2, int n)
 {
 	while (--n > 0 && *str1 && *str2 && *str1 == *str2)
@@ -41,6 +56,11 @@ int	ft_strncmp(char *str1, char *str2, int n)
 	}
 	return (*str2 - *str1);
 }
+
+/*
+ * Esta función cuenta el número de caracteres que hay en un string hasta que
+ * coincida con uno dado, en caso de que no exista ese caracter devolverá -1
+ */
 
 int	ft_strchr(char *str, char c)
 {
@@ -54,6 +74,10 @@ int	ft_strchr(char *str, char c)
 	return (-1);
 }
 
+/*
+ * Esta función duplica un string hasta una cantidad de caracteres
+ */
+
 char	*ft_strndup(char *str, unsigned int n)
 {
 	char			*dup;
@@ -66,6 +90,11 @@ char	*ft_strndup(char *str, unsigned int n)
 	dup[n] = 0;
 	return (dup);
 }
+
+/*
+ * Esta función separa un string en un array de strings tomando un caracter
+ * específico como delimitador
+ */
 
 char	**ft_split(char *str, char c)
 {
