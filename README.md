@@ -1,6 +1,6 @@
 # Pipex
 
-Pipex is a function which replicates the behaviour of a (pipe)[https://www.techtarget.com/whatis/definition/pipe#:~:text=Generally%2C%20a%20pipe%20is%20a,or%20more%20commands%20or%20programs.]. For this purpose our program will receive 4 arguments at least:
+Pipex is a function which replicates the behaviour of a [pipe](https://www.techtarget.com/whatis/definition/pipe#:~:text=Generally%2C%20a%20pipe%20is%20a,or%20more%20commands%20or%20programs). For this purpose our program will receive 4 arguments at least:
 
 - argv[1]. This will be our input file, where we will have the arguments for the first command executed
 - argv[2]. This will be the first command to be executed (before the pipe).
