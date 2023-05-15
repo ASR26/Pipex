@@ -21,7 +21,7 @@ If the mode is "OUTFILE" we will create our outfile deleting it in case it alrea
 
 After both are open we will use `dup2` function to create a copy of both [file descriptors](https://www.computerhope.com/jargon/f/file-descriptor.htm#:~:text=A%20file%20descriptor%20is%20a,Grants%20access.) and assign them the value 0 (STDIN) and 1 (STDOUT) so we can use them instead of the original file descriptor.
 
-Once we have done this we will call `redir` function giving it the first command executed, the [environment variables[(https://www.twilio.com/blog/2017/01/how-to-set-environment-variables.html) and the input file descriptor.
+Once we have done this we will call `redir` function giving it the first command executed, the [environment variables](https://www.twilio.com/blog/2017/01/how-to-set-environment-variables.html) and the input file descriptor.
 
 In `redir` we will have a [pid_t](https://www.includehelp.com/c/process-identification-pid_t-data-type.aspx) variable and an int array with size of 2. We will use the function [pipe](https://www.gnu.org/software/libc/manual/html_node/Creating-a-Pipe.html#:~:text=The%20pipe%20function%20creates%20a,descriptor%201%20is%20standard%20output.) so our 2 int array is now a pipe, being `array[0]` our reading part of the pipe and `array[1]` our writing part of the pipe. We will use the function `fork` to create a child process and assign the process value to `pid`.
 
