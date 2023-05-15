@@ -17,7 +17,7 @@ As said before our program must receive at least 4 arguments so we will check if
 
 If the mode is "INFILE" (0) we will check if our file is accesible using [access](https://linux.die.net/man/2/access), if it is we will return its file descriptor with read permission using [open](https://man7.org/linux/man-pages/man2/open.2.html) function. If its not accessible it will print an error and return 0.
 
-If the mode is "OUTFILE" we will create our outfile deleting it in case it already exist and will give it the permissions `-rw-rw-r--`.
+If the mode is "OUTFILE" (1) we will create our outfile deleting it in case it already exist and will give it the permissions `-rw-rw-r--`.
 
 After both are open we will use `dup2` function to create a copy of both [file descriptors](https://www.computerhope.com/jargon/f/file-descriptor.htm#:~:text=A%20file%20descriptor%20is%20a,Grants%20access.) and assign them the value 0 (STDIN) and 1 (STDOUT) so we can use them instead of the original file descriptor.
 
