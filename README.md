@@ -13,7 +13,7 @@ For more commands we will compile our bonus function which will receive any ammo
 
 For our workflow we will use the default pipe (not bonus) since the bonus just adds a loop and repeats the process, but we will comment if something changes for bonus.
 
-As said before our program must receive at least arguments so we will check if we have them (4 or more for bonus). In case we do not have them we will print an error message and return 1. In case we have them we will open both files (input and output) using our function `openfile`, which will give them a read or write permission to each one.
+As said before our program must receive at least 4 arguments so we will check if we have them (4 or more for bonus). In case we do not have them we will print an error message and return 1. In case we have them we will open both files (input and output) using our function `openfile`, which will give them a read or write permission to each one.
 
 If the mode is "INFILE" (0) we will check if our file is accesible using [access](https://linux.die.net/man/2/access), if it is we will return its file descriptor with read permission using [open](https://man7.org/linux/man-pages/man2/open.2.html) function. If its not accessible it will print an error and return 0.
 
