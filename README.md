@@ -29,7 +29,7 @@ If `pid` is not 0 we will close our writing file descriptor, duplicate our readi
 - If it is 0 we will exit the process returning 1.
 - If it is not 0 we will call to `exec` function giving it our command and our environment variables as parameters.
 
-In `exec` function we will split our command so we have separated words, if our first word (which must be the command) has `/` we will set this as our path; in case it does not have it we will check for a path in our environment variables using `get_paht` function.
+In `exec` function we will split our command so we have separated words, if our first word (which must be the command) has `/` we will set this as our path; in case it does not have it we will check for a path in our environment variables using `get_path` function.
 
 Once we have our path we will call to the `execve` function. After this we will print an error message since a successful execve will end the process.
 
